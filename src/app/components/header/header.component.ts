@@ -27,6 +27,7 @@ ngOnInit() {
   this.authListenerSubs.unsubscribe();
   }
 
+  // logout method
   logout() {
   this.userService.logout();
   }
