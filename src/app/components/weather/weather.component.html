@@ -1,0 +1,46 @@
+<app-banner title ="Weather"></app-banner>
+
+   <form [formGroup]="weatherForm" >
+  <div class="container form-group mt-5"  >
+    <input type="text" class="form-control" formControlName="city" placeholder="CITY">
+  </div>
+  <div *ngIf="weatherForm.controls['city'].invalid && (
+    weatherForm.controls['city'].touched  ||
+    weatherForm.controls['city'].dirty )">
+
+       <div *ngIf="weatherForm.controls['city'].errors.required" style="color: red;">
+
+         city is required
+
+       </div>
+       
+
+  </div>
+
+
+  <div class=" container form-group text-center mt-4">
+    <input type="submit" [disabled]="weatherForm.invalid" (click)="search()" class="btn btn-primary py-3 px-5" value="SEARCH">
+  </div>
+</form>
+
+<div class="mycontainer">
+  <div class="card m-5 " style="width: 18rem;">
+      <img [src]="weatherResult?.icone" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Weather</h5>
+        <p class="card-text">City :{{weatherResult?.city}}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Temperature :{{weatherResult?.temperature}}</li>
+        <li class="list-group-item">Sunrise :{{weatherResult?.sunrise}}</li>
+        <li class="list-group-item">Sunset : {{weatherResult?.sunset}}</li>
+        <li class="list-group-item">Humidity :{{weatherResult?.humidity}} %</li>
+        <li class="list-group-item">pressure :{{weatherResult?.pressure}} %</li>
+        
+      </ul>
+      
+    </div>
+  </div>
+
+
+

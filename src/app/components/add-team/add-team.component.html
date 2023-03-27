@@ -1,0 +1,32 @@
+
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-9 mx-auto text-center">
+        <h1 class="text-white">ADD TEAM</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form #teamForm ="ngForm" (ngSubmit)="addTeam()">
+   
+    <div class="container form-group">
+      <input type="text" [(ngModel)]="team.name" name ="name" class="form-control" placeholder="name ">
+    </div>
+    <div class=" container form-group">
+      <input type="text" [(ngModel)]="team.staduim" name ="staduim" class="form-control" placeholder="staduim two">
+    </div>
+    <div class=" container form-group">
+        <input type="text" [(ngModel)]="team.owner" name ="owner" class="form-control" placeholder="owner ">
+      </div>
+      <div class=" container form-group">
+        <input type="text" [(ngModel)]="team.fondation" name ="fondation" class="form-control" placeholder="fondation ">
+      </div>
+
+    <div class=" container form-group">
+      <input type="submit" class="btn btn-primary py-3 px-5" value="add team">
+    </div>
+  
+    </form>
+  
